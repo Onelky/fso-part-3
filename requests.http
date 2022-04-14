@@ -1,0 +1,24 @@
+# @no-redirect
+GET http://localhost:3001/api/persons
+
+### GET person
+# @no-redirect
+GET http://localhost:3001/api/persons/3
+
+### DELETE person
+# @no-redirect
+DELETE http://localhost:3001/api/persons/3
+
+### POST person
+# @no-redirect
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "number": "809"
+}
+
+
+### GET info
+# @no-redirect
+GET http://localhost:3001/info
