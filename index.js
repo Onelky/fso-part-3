@@ -1,8 +1,10 @@
+require('dotenv').config()
 const express = require('express')
-const service = require('./services')
+const service = require('./services/person')
 const cors = require('cors')
 const morgan = require('morgan');
 const app = express();
+
 morgan.token('content', (req, res) =>  JSON.stringify(req.body))
 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :content'));

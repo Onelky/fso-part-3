@@ -1,10 +1,14 @@
 const {overwriteFile, readFile} = require("../utils");
 const path = require('path')
+const mongoose = require("../mongo");
 const dataPath = path.resolve(__dirname, '../persons.json');
+const Person = require('../models/person')
 
 async function getPersons() {
     try {
-        return await readFile(dataPath);
+        const persons = await Person.find({});
+        await mongoose.connection.close();
+        return persons;
     }
     catch (e) {
         throw e;
